@@ -2,3 +2,4 @@
 Console.WriteLine("Hello Branch!");
 Console.WriteLine("Dotnet");
 Console.WriteLine("Gitignore bre");
+Console.WriteLine("New branch");
