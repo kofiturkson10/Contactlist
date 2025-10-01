@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("inlämingsuppgift 2 - grupp 4")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d3416dc6a7a5b51661715afebfb3b5968154593")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88dfb35423022ed50e643cd83b70b60381283786")]
 [assembly: System.Reflection.AssemblyProductAttribute("inlämingsuppgift 2 - grupp 4")]
 [assembly: System.Reflection.AssemblyTitleAttribute("inlämingsuppgift 2 - grupp 4")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
