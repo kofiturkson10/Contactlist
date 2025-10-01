@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "inlämingsuppgift 2 - grupp 4/1.0.0": {
+        "runtime": {
+          "inlämingsuppgift 2 - grupp 4.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "inlämingsuppgift 2 - grupp 4/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
