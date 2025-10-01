@@ -13,3 +13,18 @@ C:\Users\kofit\OneDrive\Desktop\Kofi Turkson\Jensen Yh\Programmering med C#, gru
 C:\Users\kofit\OneDrive\Desktop\Kofi Turkson\Jensen Yh\Programmering med C#, grund\Inlämningsuppgifter\inlämingsuppgift 2 - grupp 4\obj\Debug\net9.0\inlämingsuppgift 2 - grupp 4.pdb
 C:\Users\kofit\OneDrive\Desktop\Kofi Turkson\Jensen Yh\Programmering med C#, grund\Inlämningsuppgifter\inlämingsuppgift 2 - grupp 4\obj\Debug\net9.0\inlämingsuppgift 2 - grupp 4.genruntimeconfig.cache
 C:\Users\kofit\OneDrive\Desktop\Kofi Turkson\Jensen Yh\Programmering med C#, grund\Inlämningsuppgifter\inlämingsuppgift 2 - grupp 4\obj\Debug\net9.0\ref\inlämingsuppgift 2 - grupp 4.dll
+C:\Users\emeli\Documents\Contactlist\bin\Debug\net9.0\inlämingsuppgift 2 - grupp 4.exe
+C:\Users\emeli\Documents\Contactlist\bin\Debug\net9.0\inlämingsuppgift 2 - grupp 4.deps.json
+C:\Users\emeli\Documents\Contactlist\bin\Debug\net9.0\inlämingsuppgift 2 - grupp 4.runtimeconfig.json
+C:\Users\emeli\Documents\Contactlist\bin\Debug\net9.0\inlämingsuppgift 2 - grupp 4.dll
+C:\Users\emeli\Documents\Contactlist\bin\Debug\net9.0\inlämingsuppgift 2 - grupp 4.pdb
+C:\Users\emeli\Documents\Contactlist\obj\Debug\net9.0\inlämingsuppgift 2 - grupp 4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emeli\Documents\Contactlist\obj\Debug\net9.0\inlämingsuppgift 2 - grupp 4.AssemblyInfoInputs.cache
+C:\Users\emeli\Documents\Contactlist\obj\Debug\net9.0\inlämingsuppgift 2 - grupp 4.AssemblyInfo.cs
+C:\Users\emeli\Documents\Contactlist\obj\Debug\net9.0\inlämingsuppgift 2 - grupp 4.csproj.CoreCompileInputs.cache
+C:\Users\emeli\Documents\Contactlist\obj\Debug\net9.0\inlämingsuppgift 2 - grupp 4.sourcelink.json
+C:\Users\emeli\Documents\Contactlist\obj\Debug\net9.0\inlämingsuppgift 2 - grupp 4.dll
+C:\Users\emeli\Documents\Contactlist\obj\Debug\net9.0\refint\inlämingsuppgift 2 - grupp 4.dll
+C:\Users\emeli\Documents\Contactlist\obj\Debug\net9.0\inlämingsuppgift 2 - grupp 4.pdb
+C:\Users\emeli\Documents\Contactlist\obj\Debug\net9.0\inlämingsuppgift 2 - grupp 4.genruntimeconfig.cache
+C:\Users\emeli\Documents\Contactlist\obj\Debug\net9.0\ref\inlämingsuppgift 2 - grupp 4.dll

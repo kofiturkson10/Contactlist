@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kofit\\OneDrive\\Desktop\\Kofi Turkson\\Jensen Yh\\Programmering med C#, grund\\Inlämningsuppgifter\\inlämingsuppgift 2 - grupp 4\\inlämingsuppgift 2 - grupp 4.csproj": {}
+    "C:\\Users\\emeli\\Documents\\Contactlist\\inlämingsuppgift 2 - grupp 4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kofit\\OneDrive\\Desktop\\Kofi Turkson\\Jensen Yh\\Programmering med C#, grund\\Inlämningsuppgifter\\inlämingsuppgift 2 - grupp 4\\inlämingsuppgift 2 - grupp 4.csproj": {
+    "C:\\Users\\emeli\\Documents\\Contactlist\\inlämingsuppgift 2 - grupp 4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kofit\\OneDrive\\Desktop\\Kofi Turkson\\Jensen Yh\\Programmering med C#, grund\\Inlämningsuppgifter\\inlämingsuppgift 2 - grupp 4\\inlämingsuppgift 2 - grupp 4.csproj",
+        "projectUniqueName": "C:\\Users\\emeli\\Documents\\Contactlist\\inlämingsuppgift 2 - grupp 4.csproj",
         "projectName": "inlämingsuppgift 2 - grupp 4",
-        "projectPath": "C:\\Users\\kofit\\OneDrive\\Desktop\\Kofi Turkson\\Jensen Yh\\Programmering med C#, grund\\Inlämningsuppgifter\\inlämingsuppgift 2 - grupp 4\\inlämingsuppgift 2 - grupp 4.csproj",
-        "packagesPath": "C:\\Users\\kofit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kofit\\OneDrive\\Desktop\\Kofi Turkson\\Jensen Yh\\Programmering med C#, grund\\Inlämningsuppgifter\\inlämingsuppgift 2 - grupp 4\\obj\\",
+        "projectPath": "C:\\Users\\emeli\\Documents\\Contactlist\\inlämingsuppgift 2 - grupp 4.csproj",
+        "packagesPath": "C:\\Users\\emeli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\emeli\\Documents\\Contactlist\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kofit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\emeli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
