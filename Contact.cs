@@ -1,0 +1,23 @@
+class Contact
+{
+    public string Name { get; set; }
+    public string StreetAddress { get; set; }
+    public string ZipCode { get; set; }
+    public string City { get; set; }
+    public string PhoneNumber { get; set; }
+    public string Email { get; set; }
+
+    public Contact(string name, string streetAddress, string zipCode, string city, string phoneNumber, string email)
+    {
+        Name = name;
+        StreetAddress = streetAddress;
+        ZipCode = zipCode;
+        City = city;
+        PhoneNumber = phoneNumber;
+        Email = email;
+    }
+    public override string ToString()
+    {
+        return $"Name: {Name}\nAddress: {StreetAddress}\nZip: {ZipCode} \nCity: {City} \nPhone: {PhoneNumber} \nEmail: {Email}";
+    }
+}
