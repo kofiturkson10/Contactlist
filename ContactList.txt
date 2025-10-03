@@ -1,6 +1,1 @@
-Name: kofi
-Address: kfkfkf
-Zip: 4949494 
-City: fkkfkff 
-Phone: 4040404 
-Email: kfkfkf@gmail.com
+Name: kofi, Address: fkkfkfkf, Zip: 404040 City: fkfkkffk, Phone: 440044, Email: kofi@gmail.com

@@ -18,6 +18,6 @@ class Contact
     }
     public override string ToString()
     {
-        return $"Name: {Name}\nAddress: {StreetAddress}\nZip: {ZipCode} \nCity: {City} \nPhone: {PhoneNumber} \nEmail: {Email}";
+        return $"Name: {Name}, Address: {StreetAddress}, Zip: {ZipCode} City: {City}, Phone: {PhoneNumber}, Email: {Email}";
     }
 }
