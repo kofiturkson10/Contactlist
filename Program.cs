@@ -6,10 +6,7 @@ class Program
         AddressBook addressBook = new AddressBook();
 
         Console.WriteLine("=== Adressboken ===");
-        Console.WriteLine("Lägg till kontakt (1)");
-        Console.Write("Uppdatera kontakt (2)");
-        Console.Write("Radera kontakt (3)");
-        Console.Write("Sök kontakt (4)");
+        Console.WriteLine("Gör ett val: (1) Lägg till kontakt (2) Uppdatera kontakt (3) Radera kontakt (4) Sök kontakt");
 
         string? userChoice = Console.ReadLine();
 
