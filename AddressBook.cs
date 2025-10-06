@@ -54,9 +54,8 @@ class AddressBook
         foreach (var contact in contactsToDelete)
         {
             allContacts.Remove(contact);
+            Console.WriteLine($"Tog bort {contactsToDelete.Count} kontakt(er) från listan.");
         }
-
-        
     }
 
     public void SearchContact() { }

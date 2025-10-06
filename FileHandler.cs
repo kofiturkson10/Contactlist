@@ -33,6 +33,9 @@ public class FileHandler
 
             foreach (var line in File.ReadLines(contactList))
             {
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
+
                 string[] cDetail = line.Split(',');
                 Contact c = new Contact(
                     cDetail[0],
@@ -53,7 +56,9 @@ public class FileHandler
         using (StreamWriter writer = new StreamWriter(contactList))
         {
             foreach (Contact c in contacts)
-                writer.WriteLine($"{c.Name}, {c.StreetAddress}, {c.ZipCode}, {c.City}, {c.PhoneNumber}, {c.Email}");
+                writer.WriteLine(
+                    $"{c.Name}, {c.StreetAddress}, {c.ZipCode}, {c.City}, {c.PhoneNumber}, {c.Email}"
+                );
         }
     }
 }
