@@ -1,4 +1,4 @@
-public class Contact //Måste vara public, annars fungerar inte ReadFromFIle()
+class Contact 
 {
     public string Name { get; set; }
     public string StreetAddress { get; set; }
@@ -24,9 +24,8 @@ public class Contact //Måste vara public, annars fungerar inte ReadFromFIle()
         Email = email;
     }
 
-    public override string ToString() //Här behöver vi ta bort "name", "adress" osv. Endast skriva ut variablarna.
+    public override string ToString()
     {
-        // return $"Name: {Name}, Address: {StreetAddress}, Zip: {ZipCode} City: {City}, Phone: {PhoneNumber}, Email: {Email}";
         return $"{Name}, {StreetAddress}, {ZipCode}, {City}, {PhoneNumber}, {Email}";
     }
 }

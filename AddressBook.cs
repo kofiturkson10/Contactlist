@@ -42,8 +42,7 @@ class AddressBook
         Console.WriteLine("Kontakter i adressboken: ");
         foreach (var contact in allContacts)
         {
-            Console.WriteLine(contact.Name.Replace("Name:", "").Trim());
-
+            Console.WriteLine(contact.Name.Trim());
         }
 
         Console.WriteLine("Vilken kontakt vill du uppdatera? Skriv in namn: ");
@@ -51,7 +50,7 @@ class AddressBook
 
         foreach (var Contact in allContacts)
         {
-            string cleanedNameFromContactList = Contact.Name.Replace("Name:", "").Trim();
+            string cleanedNameFromContactList = Contact.Name.Trim();
 
             if (cleanedNameFromContactList == inputName)
             {
@@ -61,6 +60,7 @@ class AddressBook
                 {
                     Contact.Name = newName;
                 }
+
                 Console.WriteLine("Skriv in ny adress eller enter för att behålla samma: ");
                 string newAddress = Console.ReadLine();
                 if (newAddress != null && newAddress != "")
@@ -98,12 +98,10 @@ class AddressBook
                 }
 
                 Console.WriteLine("Uppdatering klar!");
-
                 fileHandler.SaveAllContacts(allContacts);
                 return;
             }
         }
-
         Console.WriteLine("Kontakt hittades inte. Avslutar programmet");
     }
     public void DeleteContact()
