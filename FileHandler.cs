@@ -64,4 +64,4 @@ public class FileHandler
 }
 
 
-//Lägg till metod OverWriteToFile(); ?
+
