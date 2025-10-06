@@ -55,34 +55,34 @@ class AddressBook
                 string newName = Console.ReadLine();
                 if (newName != null && newName != "")
                 {
-                    Contact.Name = "Name: " + newName + ", ";
+                    Contact.Name = "Name: " + newName;
                 }
                 Console.WriteLine("Skriv in ny adress eller enter för att behålla samma: ");
                 string newAddress = Console.ReadLine();
                 if (newAddress != null && newAddress != "")
                 {
-                Contact.StreetAddress = "Adress: " + newAddress + ", ";
+                Contact.StreetAddress = "Adress: " + newAddress;
                 }
 
                 Console.WriteLine("Skriv in nytt postnummer eller enter för att behålla samma: ");
                 string newZip = Console.ReadLine();
                 if (newZip != null && newZip != "")
                 {
-                    Contact.ZipCode = "Zip: " + newZip + ", ";
+                    Contact.ZipCode = "Zip: " + newZip;
                 }
 
                 Console.WriteLine("Skriv in ny city eller enter för att behålla samma: ");
                 string newCity = Console.ReadLine();
                 if (newCity != null && newCity != "")
                 {
-                    Contact.City = "City: " + newCity + ", ";
+                    Contact.City = "City: " + newCity;
                 }
                 
                 Console.WriteLine("Skriv in nytt telefonnummer eller enter för att behålla samma: ");
                 string newPhone = Console.ReadLine();
                 if (newPhone != null && newPhone != "")
                 {
-                    Contact.PhoneNumber = "Phone: " + newPhone + ", ";
+                    Contact.PhoneNumber = "Phone: " + newPhone;
                 }
 
                 Console.WriteLine("Skriv in ny email eller enter för att behålla samma: ");
