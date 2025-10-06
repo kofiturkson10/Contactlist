@@ -1,7 +1,9 @@
+using System.ComponentModel.DataAnnotations;
+
 class AddressBook
 {
     private FileHandler fileHandler = new FileHandler();
-    private List<Contact> allContacts = new List<Contact>();
+    public List<Contact> allContacts = new List<Contact>();
     public void AddContact()
     {
 
@@ -31,7 +33,48 @@ class AddressBook
     }
     public void UpdateContact()
     {
+        allContacts = fileHandler.ReadFromFile();
 
+        Console.WriteLine("Kontakter i adressboken: ");
+        foreach (var contact in allContacts)
+        {
+            Console.WriteLine(contact.Name.Replace("Name:", "").Trim());
+
+        }
+        Console.WriteLine("Vilken kontakt vill du uppdatera? Skriv in namn: ");
+        string inputName = Console.ReadLine().Trim();
+
+        foreach (var Contact in allContacts)
+        {
+            if (Contact.Name.Substring(5).Trim() == inputName)
+            {
+                Console.WriteLine("Skriv in nytt namn: ");
+                string newName = Console.ReadLine();
+                Contact.Name = newName;
+
+                Console.WriteLine("Skriv in ny adress: ");
+                string newAddress = Console.ReadLine();
+                Contact.StreetAddress = newAddress;
+
+                Console.WriteLine("Skriv in nytt postnummer: ");
+                string newZip = Console.ReadLine();
+                Contact.ZipCode = newZip;
+
+                Console.WriteLine("Skriv in ny city: ");
+                string newCity = Console.ReadLine();
+                Contact.City = newCity;
+
+                Console.WriteLine("Skriv in nytt telefonnummer: ");
+                string newPhone = Console.ReadLine();
+                Contact.PhoneNumber = newPhone;
+
+                Console.WriteLine("Skriv in ny email: ");
+                string newEmail = Console.ReadLine();
+                Contact.Email = newEmail;
+
+                fileHandler.SaveAllContacts(allContacts);
+            }
+        }
     }
     public void DeleteContact()
     {
