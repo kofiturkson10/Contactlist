@@ -47,6 +47,15 @@ public class FileHandler
             return allContacts;
         }
     }
+
+    public void SaveAllContacts(List<Contact> contacts)
+    {
+        using (StreamWriter writer = new StreamWriter(contactList))
+        {
+            foreach (Contact c in contacts)
+                writer.WriteLine($"{c.Name}, {c.StreetAddress}, {c.ZipCode}, {c.City}, {c.PhoneNumber}, {c.Email}");
+        }
+    }
 }
 
 

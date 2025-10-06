@@ -37,13 +37,27 @@ class AddressBook
 
     public void UpdateContact() { }
 
-    public string DeleteContact(string name)
+    public void DeleteContact()
     {
-// Ta emot något som identifierar vilken kontakt som ska tas bort (t.ex. ett namn eller ett index).
-// Ta bort kontakten från listan i minnet.
-// Spara den uppdaterade listan till filen igen (så att ändringen inte försvinner när man stänger programmet).
-       
-     }
+        allContacts = fileHandler.ReadFromFile();
+
+        Console.WriteLine("Skriv in namnet på den kontakt du vill radera: ");
+        string contactToDelete = Console.ReadLine();
+
+        var contactsToDelete = allContacts
+            .Where(c => c.Name.Contains(contactToDelete, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+
+        if (contactsToDelete.Count == 0)
+            Console.WriteLine("Ingen kontakt hittades med det namnet.");
+
+        foreach (var contact in contactsToDelete)
+        {
+            allContacts.Remove(contact);
+        }
+
+        
+    }
 
     public void SearchContact() { }
 }
