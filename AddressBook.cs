@@ -54,6 +54,7 @@ class AddressBook
         foreach (var contact in contactsToDelete)
         {
             allContacts.Remove(contact);
+            fileHandler.SaveAllContacts(allContacts);
             Console.WriteLine($"Tog bort {contactsToDelete.Count} kontakt(er) från listan.");
         }
     }
