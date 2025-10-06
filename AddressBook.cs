@@ -1,10 +1,10 @@
 class AddressBook
 {
     private FileHandler fileHandler = new FileHandler();
-    private List<Contact> allContacts = new List<Contact>();
+    public List<Contact> allContacts = new List<Contact>(); //Måste vara public, annars fungerar inte ReadFromFIle()
+
     public void AddContact()
     {
-
         Console.WriteLine("Skriv in namn: ");
         string inputName = Console.ReadLine();
 
@@ -23,22 +23,40 @@ class AddressBook
         Console.WriteLine("Skriv in email: ");
         string inputEmail = Console.ReadLine();
 
-        Contact contact = new Contact(inputName, inputAddress, inputZip, inputCity, inputPhone, inputEmail);
+        Contact contact = new Contact(
+            inputName,
+            inputAddress,
+            inputZip,
+            inputCity,
+            inputPhone,
+            inputEmail
+        );
         Console.WriteLine(contact);
         fileHandler.WriteToFile(contact.ToString());
-
-
     }
-    public void UpdateContact()
-    {
 
-    }
+    public void UpdateContact() { }
+
     public void DeleteContact()
     {
+        allContacts = fileHandler.ReadFromFile();
 
-    }
-    public void SearchContact()
-    {
+        Console.WriteLine("Skriv in namnet på den kontakt du vill radera: ");
+        string contactToDelete = Console.ReadLine();
 
+        var contactsToDelete = allContacts
+            .Where(c => c.Name.Contains(contactToDelete, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+
+        if (contactsToDelete.Count == 0)
+            Console.WriteLine("Ingen kontakt hittades med det namnet.");
+
+        foreach (var contact in contactsToDelete)
+        {
+            allContacts.Remove(contact);
+            Console.WriteLine($"Tog bort {contactsToDelete.Count} kontakt(er) från listan.");
+        }
     }
+
+    public void SearchContact() { }
 }
