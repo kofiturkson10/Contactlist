@@ -41,40 +41,66 @@ class AddressBook
             Console.WriteLine(contact.Name.Replace("Name:", "").Trim());
 
         }
+
         Console.WriteLine("Vilken kontakt vill du uppdatera? Skriv in namn: ");
         string inputName = Console.ReadLine().Trim();
 
         foreach (var Contact in allContacts)
         {
-            if (Contact.Name.Substring(5).Trim() == inputName)
+            string cleanedNameFromContactList = Contact.Name.Replace("Name:", "").Trim();
+
+            if (cleanedNameFromContactList == inputName)
             {
-                Console.WriteLine("Skriv in nytt namn: ");
+                Console.WriteLine("Skriv in nytt namn eller enter för att behålla samma: ");
                 string newName = Console.ReadLine();
-                Contact.Name = newName;
-
-                Console.WriteLine("Skriv in ny adress: ");
+                if (newName != null && newName != "")
+                {
+                    Contact.Name = "Name: " + newName + ", ";
+                }
+                Console.WriteLine("Skriv in ny adress eller enter för att behålla samma: ");
                 string newAddress = Console.ReadLine();
-                Contact.StreetAddress = newAddress;
+                if (newAddress != null && newAddress != "")
+                {
+                Contact.StreetAddress = "Adress: " + newAddress + ", ";
+                }
 
-                Console.WriteLine("Skriv in nytt postnummer: ");
+                Console.WriteLine("Skriv in nytt postnummer eller enter för att behålla samma: ");
                 string newZip = Console.ReadLine();
-                Contact.ZipCode = newZip;
+                if (newZip != null && newZip != "")
+                {
+                    Contact.ZipCode = "Zip: " + newZip + ", ";
+                }
 
-                Console.WriteLine("Skriv in ny city: ");
+                Console.WriteLine("Skriv in ny city eller enter för att behålla samma: ");
                 string newCity = Console.ReadLine();
-                Contact.City = newCity;
-
-                Console.WriteLine("Skriv in nytt telefonnummer: ");
+                if (newCity != null && newCity != "")
+                {
+                    Contact.City = "City: " + newCity + ", ";
+                }
+                
+                Console.WriteLine("Skriv in nytt telefonnummer eller enter för att behålla samma: ");
                 string newPhone = Console.ReadLine();
-                Contact.PhoneNumber = newPhone;
+                if (newPhone != null && newPhone != "")
+                {
+                    Contact.PhoneNumber = "Phone: " + newPhone + ", ";
+                }
 
-                Console.WriteLine("Skriv in ny email: ");
+                Console.WriteLine("Skriv in ny email eller enter för att behålla samma: ");
                 string newEmail = Console.ReadLine();
-                Contact.Email = newEmail;
+                if (newEmail != null && newEmail != "")
+                {
+                    Contact.Email = "Email: " + newEmail;
+                
+                }
+
+                Console.WriteLine("Uppdatering klar!");
 
                 fileHandler.SaveAllContacts(allContacts);
+                return;
             }
         }
+
+        Console.WriteLine("Kontakt hittades inte. Avslutar programmet");
     }
     public void DeleteContact()
     {
