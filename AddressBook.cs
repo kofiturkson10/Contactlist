@@ -21,7 +21,7 @@ class AddressBook
         Console.WriteLine("Skriv in telefonnummer: ");
         string? inputPhone = Console.ReadLine();
 
-        Console.WriteLine("Skriv in email: ");
+        Console.WriteLine("Skriv in email: ");  
         string? inputEmail = Console.ReadLine();
 
         Contact contact = new Contact(
@@ -38,15 +38,17 @@ class AddressBook
         public void UpdateContact()
     {
         allContacts = fileHandler.ReadFromFile();
+        int i = 0; // Lägg till räknare för att hantarea dubeltter?
 
         Console.WriteLine("Kontakter i adressboken: ");
-        foreach (var contact in allContacts)
+        foreach (var contact in allContacts) 
         {
-            Console.WriteLine(contact.Name.Trim());
+            i++;
+            Console.WriteLine(i + "Namn: " + contact.Name.Trim() + "Email: " + contact.Email.Trim());
         }
 
-        Console.WriteLine("Vilken kontakt vill du uppdatera? Skriv in namn: ");
-        string inputName = Console.ReadLine().Trim();
+        Console.WriteLine("Vilken kontakt vill du uppdatera? Skriv in numret: ");
+        string? inputName = Console.ReadLine().Trim();
 
         foreach (var Contact in allContacts)
         {
@@ -55,47 +57,28 @@ class AddressBook
             if (cleanedNameFromContactList == inputName)
             {
                 Console.WriteLine("Skriv in nytt namn eller enter för att behålla samma: ");
-                string newName = Console.ReadLine();
-                if (newName != null && newName != "")
-                {
-                    Contact.Name = newName;
-                }
+                string? newName = Console.ReadLine();
+                if (newName != null && newName != "") Contact.Name = newName; // VS string.IsNullOrWhiteSpace(newName)
 
                 Console.WriteLine("Skriv in ny adress eller enter för att behålla samma: ");
-                string newAddress = Console.ReadLine();
-                if (newAddress != null && newAddress != "")
-                {
-                Contact.StreetAddress = newAddress;
-                }
+                string? newAddress = Console.ReadLine();
+                if (newAddress != null && newAddress != "") Contact.StreetAddress = newAddress;
 
                 Console.WriteLine("Skriv in nytt postnummer eller enter för att behålla samma: ");
-                string newZip = Console.ReadLine();
-                if (newZip != null && newZip != "")
-                {
-                    Contact.ZipCode = newZip;
-                }
+                string? newZip = Console.ReadLine();
+                if (newZip != null && newZip != "") Contact.ZipCode = newZip;
 
                 Console.WriteLine("Skriv in ny city eller enter för att behålla samma: ");
-                string newCity = Console.ReadLine();
-                if (newCity != null && newCity != "")
-                {
-                    Contact.City = newCity;
-                }
+                string? newCity = Console.ReadLine();
+                if (newCity != null && newCity != "") Contact.City = newCity;
                 
                 Console.WriteLine("Skriv in nytt telefonnummer eller enter för att behålla samma: ");
-                string newPhone = Console.ReadLine();
-                if (newPhone != null && newPhone != "")
-                {
-                    Contact.PhoneNumber = newPhone;
-                }
+                string? newPhone = Console.ReadLine();
+                if (newPhone != null && newPhone != "") Contact.PhoneNumber = newPhone;
 
                 Console.WriteLine("Skriv in ny email eller enter för att behålla samma: ");
-                string newEmail = Console.ReadLine();
-                if (newEmail != null && newEmail != "")
-                {
-                    Contact.Email = newEmail;
-                
-                }
+                string? newEmail = Console.ReadLine();
+                if (newEmail != null && newEmail != "") Contact.Email = newEmail;
 
                 Console.WriteLine("Uppdatering klar!");
                 fileHandler.SaveAllContacts(allContacts);
