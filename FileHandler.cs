@@ -1,4 +1,4 @@
-public class FileHandler
+ class FileHandler
 {
     string contactList = @"ContactList.txt";
 
