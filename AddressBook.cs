@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-class AddressBook
+public class AddressBook
 {
     private FileHandler fileHandler = new FileHandler();
     private List<Contact> allContacts = new List<Contact>();
@@ -35,7 +35,7 @@ class AddressBook
         Console.WriteLine(contact);
         fileHandler.WriteToFile(contact.ToString());
     }
-        public void UpdateContact()
+    public void UpdateContact()
     {
         allContacts = fileHandler.ReadFromFile();
 
@@ -65,7 +65,7 @@ class AddressBook
                 string newAddress = Console.ReadLine();
                 if (newAddress != null && newAddress != "")
                 {
-                Contact.StreetAddress = newAddress;
+                    Contact.StreetAddress = newAddress;
                 }
 
                 Console.WriteLine("Skriv in nytt postnummer eller enter för att behålla samma: ");
@@ -81,7 +81,7 @@ class AddressBook
                 {
                     Contact.City = newCity;
                 }
-                
+
                 Console.WriteLine("Skriv in nytt telefonnummer eller enter för att behålla samma: ");
                 string newPhone = Console.ReadLine();
                 if (newPhone != null && newPhone != "")
@@ -94,7 +94,7 @@ class AddressBook
                 if (newEmail != null && newEmail != "")
                 {
                     Contact.Email = newEmail;
-                
+
                 }
 
                 Console.WriteLine("Uppdatering klar!");
@@ -137,11 +137,13 @@ class AddressBook
         {
             Console.WriteLine("=== Sök kontakt ===\n");
 
-            Console.WriteLine("Välj ett alternativ: (1) Sök på namn. (2) Sök på postort. (3) Tillbaka till huvudmenyn. ");
+            Console.WriteLine("Välj ett alternativ: (1) Sök på namn. (2) Sök på ort. (3) Tillbaka till huvudmenyn. ");
             string searchChoise = Console.ReadLine() ?? "";
+
 
             if (searchChoise == "3")
             {
+                Console.Clear();
                 return;
             }
             if (searchChoise != "1" && searchChoise != "2")
@@ -155,6 +157,8 @@ class AddressBook
                 Console.WriteLine("Ange namn: ");
                 string searchName = Console.ReadLine() ?? "";
 
+                Console.Clear();
+
                 string[] contacts = File.ReadAllLines("ContactList.txt");
                 bool match = false;
 
@@ -162,19 +166,27 @@ class AddressBook
                 {
                     if (contact.ToLower().Contains(searchName.ToLower()))
                     {
-                        Console.WriteLine($"\n{contact}\n");
-                        match = true;
+                        if (!match)
+                        {
+                            Console.WriteLine("\nResultat av sökning:\n");
+                            match = true;
+                        }
+                        Console.WriteLine($"{contact}\n");
                     }
                 }
+
                 if (!match)
                 {
                     Console.WriteLine("Ingen kontakt hittades! ");
                 }
+
             }
             else if (searchChoise == "2")
             {
-                Console.WriteLine("Ange postort: ");
+                Console.WriteLine("Ange ort: ");
                 string searchCity = Console.ReadLine() ?? "";
+
+                Console.Clear();
 
                 string[] contacts = File.ReadAllLines("ContactList.txt");
                 bool match = false;
@@ -183,8 +195,12 @@ class AddressBook
                 {
                     if (contact.ToLower().Contains(searchCity.ToLower()))
                     {
-                        Console.WriteLine(contact);
-                        match = true;
+                        if (!match)
+                        {
+                            Console.WriteLine("\nResultat av sökning:\n");
+                            match = true;
+                        }
+                        Console.WriteLine($"{contact}\n");
                     }
                 }
                 if (!match)
