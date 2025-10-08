@@ -107,7 +107,6 @@ public class AddressBook
 
         Console.WriteLine("Kontakt hittades inte. Avslutar programmet");
     }
-
     public void DeleteContact()
     {
         allContacts = fileHandler.ReadFromFile();
@@ -129,7 +128,6 @@ public class AddressBook
         fileHandler.SaveAllContacts(allContacts);
         Console.WriteLine($"Tog bort {contactsToDelete.Count} kontakt(er) från listan.");
     }
-
     public void SearchContact()
     {
         Console.Clear();
@@ -141,7 +139,6 @@ public class AddressBook
             Console.WriteLine("Välj ett alternativ: (1) Sök på namn. (2) Sök på ort. (3) Tillbaka till huvudmenyn. ");
 
             string searchChoise = Console.ReadLine() ?? "";
-
 
             if (searchChoise == "3")
             {
