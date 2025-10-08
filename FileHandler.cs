@@ -2,7 +2,7 @@ class FileHandler
 {
     string contactList = @"ContactList.txt";
 
-    public void WriteToFile(string contact) //Ändra namn- AddToFile??
+    public void WriteToFile(string contact) 
     {
         using (StreamWriter writer = new StreamWriter(contactList, true))
         {
@@ -24,31 +24,28 @@ class FileHandler
 
     public List<Contact> ReadFromFile()
     {
-        using (StreamReader reader = new StreamReader(contactList))
-        {
-            List<Contact> allContacts = new List<Contact>();
+        List<Contact> allContacts = new List<Contact>();
 
-            if (!File.Exists(contactList))
-                return allContacts;
-
-            foreach (var line in File.ReadLines(contactList))
-            {
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
-
-                string[] cDetail = line.Split(',');
-                Contact c = new Contact(
-                    cDetail[0],
-                    cDetail[1],
-                    cDetail[2],
-                    cDetail[3],
-                    cDetail[4],
-                    cDetail[5]
-                );
-                allContacts.Add(c);
-            }
+        if (!File.Exists(contactList)) //Om filen inte finns returneras en tom lista, förhindrar att programmet krashar.
             return allContacts;
+
+        foreach (var line in File.ReadLines(contactList))
+        {
+            if (string.IsNullOrWhiteSpace(line)) //Förhindra att programmet läser tomma rader.
+                continue;
+
+            string[] cDetail = line.Split(',');
+            Contact c = new Contact(
+                cDetail[0],
+                cDetail[1],
+                cDetail[2],
+                cDetail[3],
+                cDetail[4],
+                cDetail[5]
+            );
+            allContacts.Add(c);
         }
+        return allContacts;
     }
 
     public void SaveAllContacts(List<Contact> contacts)
@@ -62,6 +59,3 @@ class FileHandler
         }
     }
 }
-
-
-

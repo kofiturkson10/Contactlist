@@ -4,10 +4,11 @@ class AddressBook
 {
     private FileHandler fileHandler = new FileHandler();
     private List<Contact> allContacts = new List<Contact>();
+
     public void AddContact()
     {
         Console.WriteLine("Skriv in namn: ");
-        string? inputName = Console.ReadLine();
+        string? inputName = Console.ReadLine(); //Ska vi sätta värdet direkt på propertym? (Se update contact)
 
         Console.WriteLine("Skriv in adress: ");
         string? inputAddress = Console.ReadLine();
@@ -35,7 +36,8 @@ class AddressBook
         Console.WriteLine(contact);
         fileHandler.WriteToFile(contact.ToString());
     }
-        public void UpdateContact()
+
+    public void UpdateContact()
     {
         allContacts = fileHandler.ReadFromFile();
 
@@ -43,7 +45,6 @@ class AddressBook
         foreach (var contact in allContacts)
         {
             Console.WriteLine(contact.Name.Replace("Name:", "").Trim());
-
         }
 
         Console.WriteLine("Vilken kontakt vill du uppdatera? Skriv in namn: ");
@@ -65,7 +66,7 @@ class AddressBook
                 string newAddress = Console.ReadLine();
                 if (newAddress != null && newAddress != "")
                 {
-                Contact.StreetAddress = newAddress;
+                    Contact.StreetAddress = newAddress;
                 }
 
                 Console.WriteLine("Skriv in nytt postnummer eller enter för att behålla samma: ");
@@ -81,8 +82,10 @@ class AddressBook
                 {
                     Contact.City = newCity;
                 }
-                
-                Console.WriteLine("Skriv in nytt telefonnummer eller enter för att behålla samma: ");
+
+                Console.WriteLine(
+                    "Skriv in nytt telefonnummer eller enter för att behålla samma: "
+                );
                 string newPhone = Console.ReadLine();
                 if (newPhone != null && newPhone != "")
                 {
@@ -94,7 +97,6 @@ class AddressBook
                 if (newEmail != null && newEmail != "")
                 {
                     Contact.Email = newEmail;
-                
                 }
 
                 Console.WriteLine("Uppdatering klar!");
@@ -106,6 +108,7 @@ class AddressBook
 
         Console.WriteLine("Kontakt hittades inte. Avslutar programmet");
     }
+
     public void DeleteContact()
     {
         allContacts = fileHandler.ReadFromFile();
@@ -123,10 +126,9 @@ class AddressBook
         foreach (var contact in contactsToDelete)
         {
             allContacts.Remove(contact);
-            fileHandler.SaveAllContacts(allContacts);
-            Console.WriteLine($"Tog bort {contactsToDelete.Count} kontakt(er) från listan.");
-
         }
+        fileHandler.SaveAllContacts(allContacts);
+        Console.WriteLine($"Tog bort {contactsToDelete.Count} kontakt(er) från listan.");
     }
 
     public void SearchContact()
@@ -137,7 +139,9 @@ class AddressBook
         {
             Console.WriteLine("=== Sök kontakt ===\n");
 
-            Console.WriteLine("Välj ett alternativ: (1) Sök på namn. (2) Sök på postort. (3) Tillbaka till huvudmenyn. ");
+            Console.WriteLine(
+                "Välj ett alternativ: (1) Sök på namn. (2) Sök på postort. (3) Tillbaka till huvudmenyn. "
+            );
             string searchChoise = Console.ReadLine() ?? "";
 
             if (searchChoise == "3")
@@ -155,7 +159,7 @@ class AddressBook
                 Console.WriteLine("Ange namn: ");
                 string searchName = Console.ReadLine() ?? "";
 
-                string[] contacts = File.ReadAllLines("ContactList.txt");
+                string[] contacts = File.ReadAllLines("ContactList.txt"); //Använd ReadFromFile istället? Från FileHandler? 
                 bool match = false;
 
                 foreach (string contact in contacts)
