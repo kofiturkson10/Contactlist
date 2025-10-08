@@ -2,12 +2,17 @@
 {
     static void Main()
     {
-        AddressBook addressBook = new AddressBook();
+        bool isProgramRunning = true;
 
-        while (true)
+        while (isProgramRunning)
         {
-            Console.WriteLine("=== Adressboken ===\n");
-            Console.WriteLine("Gör ett val: (1) Lägg till kontakt (2) Uppdatera kontakt (3) Radera kontakt (4) Sök kontakt");
+            AddressBook addressBook = new AddressBook();
+
+            Console.WriteLine("=== Adressboken ===");
+            Console.WriteLine("\n   MENY   ");
+            Console.WriteLine(
+                "Gör ett val:\n(1) Lägg till kontakt\n(2) Uppdatera kontakt\n(3) Radera kontakt\n(4) Sök kontakt\n(5) Stäng adressboken"
+            );
 
             string? userChoice = Console.ReadLine();
 
@@ -29,11 +34,15 @@
                     addressBook.SearchContact();
                     break;
 
+                case "5":
+                    Console.Clear();
+                    Console.WriteLine("Programmet avslutat");
+                    isProgramRunning = false;
+                    break;
                 default:
                     Console.WriteLine("Fel inmatning!");
                     break;
             }
         }
-
     }
 }

@@ -4,10 +4,11 @@ public class AddressBook
 {
     private FileHandler fileHandler = new FileHandler();
     private List<Contact> allContacts = new List<Contact>();
+
     public void AddContact()
     {
         Console.WriteLine("Skriv in namn: ");
-        string? inputName = Console.ReadLine();
+        string? inputName = Console.ReadLine(); //Ska vi sätta värdet direkt på propertym? (Se update contact)
 
         Console.WriteLine("Skriv in adress: ");
         string? inputAddress = Console.ReadLine();
@@ -35,6 +36,7 @@ public class AddressBook
         Console.WriteLine(contact);
         fileHandler.WriteToFile(contact.ToString());
     }
+
     public void UpdateContact()
     {
         allContacts = fileHandler.ReadFromFile();
@@ -43,7 +45,6 @@ public class AddressBook
         foreach (var contact in allContacts)
         {
             Console.WriteLine(contact.Name.Replace("Name:", "").Trim());
-
         }
 
         Console.WriteLine("Vilken kontakt vill du uppdatera? Skriv in namn: ");
@@ -83,6 +84,7 @@ public class AddressBook
                 }
 
                 Console.WriteLine("Skriv in nytt telefonnummer eller enter för att behålla samma: ");
+
                 string newPhone = Console.ReadLine();
                 if (newPhone != null && newPhone != "")
                 {
@@ -94,7 +96,6 @@ public class AddressBook
                 if (newEmail != null && newEmail != "")
                 {
                     Contact.Email = newEmail;
-
                 }
 
                 Console.WriteLine("Uppdatering klar!");
@@ -106,6 +107,7 @@ public class AddressBook
 
         Console.WriteLine("Kontakt hittades inte. Avslutar programmet");
     }
+
     public void DeleteContact()
     {
         allContacts = fileHandler.ReadFromFile();
@@ -123,10 +125,9 @@ public class AddressBook
         foreach (var contact in contactsToDelete)
         {
             allContacts.Remove(contact);
-            fileHandler.SaveAllContacts(allContacts);
-            Console.WriteLine($"Tog bort {contactsToDelete.Count} kontakt(er) från listan.");
-
         }
+        fileHandler.SaveAllContacts(allContacts);
+        Console.WriteLine($"Tog bort {contactsToDelete.Count} kontakt(er) från listan.");
     }
 
     public void SearchContact()
@@ -138,6 +139,7 @@ public class AddressBook
             Console.WriteLine("=== Sök kontakt ===\n");
 
             Console.WriteLine("Välj ett alternativ: (1) Sök på namn. (2) Sök på ort. (3) Tillbaka till huvudmenyn. ");
+
             string searchChoise = Console.ReadLine() ?? "";
 
 
@@ -159,7 +161,8 @@ public class AddressBook
 
                 Console.Clear();
 
-                string[] contacts = File.ReadAllLines("ContactList.txt");
+                string[] contacts = File.ReadAllLines("ContactList.txt"); // read from file
+
                 bool match = false;
 
                 foreach (string contact in contacts)
