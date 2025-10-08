@@ -38,16 +38,16 @@ class AddressBook
         public void UpdateContact()
     {
         allContacts = fileHandler.ReadFromFile();
-        int i = 0; // Lägg till räknare för att hantarea dubeltter?
+        //int i = 0; // Lägg till räknare för att hantarea dubeltter?
 
         Console.WriteLine("Kontakter i adressboken: ");
         foreach (var contact in allContacts) 
         {
-            i++;
-            Console.WriteLine(i + "Namn: " + contact.Name.Trim() + "Email: " + contact.Email.Trim());
+          //  i++;
+            Console.WriteLine("Namn: " + contact.Name.Trim() + "Email: " + contact.Email.Trim());
         }
 
-        Console.WriteLine("Vilken kontakt vill du uppdatera? Skriv in numret: ");
+        Console.WriteLine("Vilken kontakt vill du uppdatera? Skriv in namnet: ");
         string? inputName = Console.ReadLine().Trim();
 
         foreach (var Contact in allContacts)
