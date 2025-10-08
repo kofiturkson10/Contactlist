@@ -2,34 +2,47 @@
 {
     static void Main()
     {
-        AddressBook addressBook = new AddressBook();
+        bool isProgramRunning = true;
 
-        Console.WriteLine("=== Adressboken ===");
-        Console.WriteLine("Gör ett val: (1) Lägg till kontakt (2) Uppdatera kontakt (3) Radera kontakt (4) Sök kontakt");
-
-        string? userChoice = Console.ReadLine();
-
-        switch (userChoice)
+        while (isProgramRunning)
         {
-            case "1":
-                addressBook.AddContact();
-                break;
+            AddressBook addressBook = new AddressBook();
 
-            case "2":
-                addressBook.UpdateContact();
-                break;
+            Console.WriteLine("=== Adressboken ===");
+            Console.WriteLine("\n   MENY   ");
+            Console.WriteLine(
+                "Gör ett val:\n(1) Lägg till kontakt\n(2) Uppdatera kontakt\n(3) Radera kontakt\n(4) Sök kontakt\n(5) Stäng adressboken"
+            );
 
-            case "3":
-                addressBook.DeleteContact();
-                break;
+            string? userChoice = Console.ReadLine();
 
-            case "4":
-                addressBook.SearchContact();
-                break;
+            switch (userChoice)
+            {
+                case "1":
+                    addressBook.AddContact();
+                    break;
 
-            default:
-                Console.WriteLine("Fel inmatning!");
-                break;
+                case "2":
+                    addressBook.UpdateContact();
+                    break;
+
+                case "3":
+                    addressBook.DeleteContact();
+                    break;
+
+                case "4":
+                    addressBook.SearchContact();
+                    break;
+
+                case "5":
+                    Console.Clear();
+                    Console.WriteLine("Programmet avslutat");
+                    isProgramRunning = false;
+                    break;
+                default:
+                    Console.WriteLine("Fel inmatning!");
+                    break;
+            }
         }
     }
 }
