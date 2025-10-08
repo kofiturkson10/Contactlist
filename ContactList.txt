@@ -1,6 +1,6 @@
-Kofi Turkson,    Industrigatan 1,    11246,    Stockholm,    0737895750,    kofi.turkson10@gmail.com
-Anna Persson,    Hamngatan 78,    13122,    Stockholm,    0702288232,    anna.persson@hotamail.com
-Mohammed Ali ,    Granvägen 7,    16555,    Järfälla,    0702214544,    mohammed@yahoo.com
-Johanna Ibrahimovic,    Portvägen 11,    14111,    Järfälla,    0708887755,    johanna123@hotmail.com
-Yousef Amin,    Fältvägen 22,    16322,    Spånga,    0737898778,    you44.amin@gmail.com
-Anders Holm,   Äppelgränd 44,   16211,   Spånga,   0704565445,   ander.holm@gmail.com
+Kofi Turkson, Industrigatan 1, 11246, Stockholm, 0737895750, kofi.turkson10@gmail.com
+Anna Persson, Hamngatan 78, 13122, Stockholm, 0702288232, anna.persson@hotamail.com
+Mohammed Ali , Granvägen 7, 16555, Järfälla, 0702214544, mohammed@yahoo.com
+Johanna Ibrahimovic, Portvägen 11, 14111, Järfälla, 0708887755, johanna123@hotmail.com
+Yousef Amin, Fältvägen 22, 16322, Spånga, 0737898778, you44.amin@gmail.com
+Anders Holm, Äppelgränd 44, 16211, Spånga, 0704565445, ander.holm@gmail.com

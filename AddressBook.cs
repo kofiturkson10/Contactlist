@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Transactions;
 
 public class AddressBook
 {
@@ -40,54 +41,60 @@ public class AddressBook
     public void UpdateContact()
     {
         allContacts = fileHandler.ReadFromFile();
-        //int i = 0; // Lägg till räknare för att hantarea dubeltter?
 
-        Console.WriteLine("Kontakter i adressboken: ");
-        foreach (var contact in allContacts) 
-        {
-          //  i++;
-            Console.WriteLine("Namn: " + contact.Name.Trim() + " Email: " + contact.Email.Trim());
-        }
-
-        Console.WriteLine("Vilken kontakt vill du uppdatera? Skriv in namnet: ");
-        string? inputName = Console.ReadLine().Trim();
-
-        foreach (var Contact in allContacts)
-        {
-            string cleanedNameFromContactList = Contact.Name.Trim();
-
-            if (cleanedNameFromContactList == inputName)
+        while (true) {
+            Console.WriteLine("\nKontakter i adressboken: ");
+            foreach (var contact in allContacts)
             {
-                Console.WriteLine("Skriv in nytt namn eller enter för att behålla samma: ");
-                string? newName = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(newName)) Contact.Name = newName; // VS string.IsNullOrWhiteSpace(newName)
+                Console.WriteLine(contact.Name.Trim() + " - " + contact.Email.Trim());
+            }
 
-                Console.WriteLine("Skriv in ny adress eller enter för att behålla samma: ");
-                string? newAddress = Console.ReadLine();
-                if (newAddress != null && newAddress != "") Contact.StreetAddress = newAddress;
+            Console.WriteLine("\nVilken kontakt vill du uppdatera? Skriv in den email som tillhör personen annars ange 'exit' för att gå tillbaka till huvudmenyn: ");
+            string? inputUser = Console.ReadLine().Trim();
 
-                Console.WriteLine("Skriv in nytt postnummer eller enter för att behålla samma: ");
-                string? newZip = Console.ReadLine();
-                if (newZip != null && newZip != "") Contact.ZipCode = newZip;
-
-                Console.WriteLine("Skriv in ny city eller enter för att behålla samma: ");
-                string? newCity = Console.ReadLine();
-                if (newCity != null && newCity != "") Contact.City = newCity;
-                
-                Console.WriteLine("Skriv in nytt telefonnummer eller enter för att behålla samma: ");
-                string? newPhone = Console.ReadLine();
-                if (newPhone != null && newPhone != "") Contact.PhoneNumber = newPhone;
-
-                Console.WriteLine("Skriv in ny email eller enter för att behålla samma: ");
-                string? newEmail = Console.ReadLine();
-                if (newEmail != null && newEmail != "") Contact.Email = newEmail;
-
-                Console.WriteLine("Uppdatering klar!");
-                fileHandler.SaveAllContacts(allContacts);
+            if (inputUser.ToLower() == "exit") 
+            {
+                Console.Clear();
                 return;
             }
+
+            foreach (var Contact in allContacts)
+            {
+                string cleanedNameFromContactList = Contact.Email.Trim();
+
+                if (cleanedNameFromContactList == inputUser)
+                {
+                    Console.WriteLine("Skriv in nytt namn eller enter för att behålla samma: ");
+                    string? newName = Console.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(newName)) Contact.Name = newName;
+
+                    Console.WriteLine("Skriv in ny adress eller enter för att behålla samma: ");
+                    string? newAddress = Console.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(newAddress)) Contact.StreetAddress = newAddress;
+
+                    Console.WriteLine("Skriv in nytt postnummer eller enter för att behålla samma: ");
+                    string? newZip = Console.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(newZip)) Contact.ZipCode = newZip;
+
+                    Console.WriteLine("Skriv in ny city eller enter för att behålla samma: ");
+                    string? newCity = Console.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(newCity)) Contact.City = newCity;
+
+                    Console.WriteLine("Skriv in nytt telefonnummer eller enter för att behålla samma: ");
+                    string? newPhone = Console.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(newPhone)) Contact.PhoneNumber = newPhone;
+
+                    Console.WriteLine("Skriv in ny email eller enter för att behålla samma: ");
+                    string? newEmail = Console.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(newEmail)) Contact.Email = newEmail;
+
+                    Console.WriteLine("Uppdatering klar!");
+                    fileHandler.SaveAllContacts(allContacts);
+                    return;
+                }
+            }
+            Console.WriteLine("Kontakt hittades inte.");
         }
-        Console.WriteLine("Kontakt hittades inte. Avslutar programmet");
     }
     public void DeleteContact()
     {
