@@ -8,7 +8,7 @@ public class AddressBook
     public void AddContact()
     {
         Console.WriteLine("Skriv in namn: ");
-        string? inputName = Console.ReadLine(); //Ska vi sätta värdet direkt på propertym? (Se update contact)
+        string? inputName = Console.ReadLine(); 
 
         Console.WriteLine("Skriv in adress: ");
         string? inputAddress = Console.ReadLine();
@@ -46,7 +46,7 @@ public class AddressBook
         foreach (var contact in allContacts) 
         {
           //  i++;
-            Console.WriteLine("Namn: " + contact.Name.Trim() + "Email: " + contact.Email.Trim());
+            Console.WriteLine("Namn: " + contact.Name.Trim() + " Email: " + contact.Email.Trim());
         }
 
         Console.WriteLine("Vilken kontakt vill du uppdatera? Skriv in namnet: ");
@@ -60,7 +60,7 @@ public class AddressBook
             {
                 Console.WriteLine("Skriv in nytt namn eller enter för att behålla samma: ");
                 string? newName = Console.ReadLine();
-                if (newName != null && newName != "") Contact.Name = newName; // VS string.IsNullOrWhiteSpace(newName)
+                if (string.IsNullOrWhiteSpace(newName)) Contact.Name = newName; // VS string.IsNullOrWhiteSpace(newName)
 
                 Console.WriteLine("Skriv in ny adress eller enter för att behålla samma: ");
                 string? newAddress = Console.ReadLine();
@@ -94,16 +94,16 @@ public class AddressBook
         allContacts = fileHandler.ReadFromFile();
 
         Console.WriteLine("Skriv in namnet på den kontakt du vill radera: ");
-        string contactToDelete = Console.ReadLine();
+        string? contactToDelete = Console.ReadLine();
 
-        var contactsToDelete = allContacts
+        List<Contact> contactsToDelete = allContacts
             .Where(c => c.Name.Contains(contactToDelete, StringComparison.OrdinalIgnoreCase))
             .ToList();
 
         if (contactsToDelete.Count == 0)
             Console.WriteLine("Ingen kontakt hittades med det namnet.");
 
-        foreach (var contact in contactsToDelete)
+        foreach (Contact contact in contactsToDelete)
         {
             allContacts.Remove(contact);
         }
@@ -140,13 +140,13 @@ public class AddressBook
 
                 Console.Clear();
 
-                string[] contacts = File.ReadAllLines("ContactList.txt"); // read from file
-
+                allContacts = fileHandler.ReadFromFile();
+  
                 bool match = false;
 
-                foreach (string contact in contacts)
+                foreach (Contact contact in allContacts) 
                 {
-                    if (contact.ToLower().Contains(searchName.ToLower()))
+                    if (contact.Name.ToLower().Contains(searchName.ToLower())) 
                     {
                         if (!match)
                         {
@@ -160,8 +160,7 @@ public class AddressBook
                 if (!match)
                 {
                     Console.WriteLine("Ingen kontakt hittades! ");
-                }
-
+                } 
             }
             else if (searchChoise == "2")
             {
@@ -170,12 +169,13 @@ public class AddressBook
 
                 Console.Clear();
 
-                string[] contacts = File.ReadAllLines("ContactList.txt");
+                allContacts = fileHandler.ReadFromFile();
+
                 bool match = false;
 
-                foreach (string contact in contacts)
+                foreach (Contact contact in allContacts)
                 {
-                    if (contact.ToLower().Contains(searchCity.ToLower()))
+                    if (contact.City.ToLower().Contains(searchCity.ToLower()))
                     {
                         if (!match)
                         {
@@ -185,10 +185,11 @@ public class AddressBook
                         Console.WriteLine($"{contact}\n");
                     }
                 }
+
                 if (!match)
                 {
                     Console.WriteLine("Ingen kontakt hittades! ");
-                }
+                } 
             }
             Console.WriteLine("Tryck på valfri knapp för att gå tillbaka till sök menyn. ");
             Console.ReadKey();
