@@ -42,7 +42,7 @@
         {
             foreach (Contact c in contacts)
                 writer.WriteLine(
-                    $"{c.Name}, {c.StreetAddress}, {c.ZipCode}, {c.City}, {c.PhoneNumber}, {c.Email}"
+                    $"{c.Name},{c.StreetAddress},{c.ZipCode},{c.City},{c.PhoneNumber},{c.Email}"
                 );
         }
     }
