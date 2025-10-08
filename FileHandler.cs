@@ -1,4 +1,4 @@
-class FileHandler
+public class FileHandler
 {
     string contactList = @"ContactList.txt";
 
@@ -9,18 +9,6 @@ class FileHandler
             writer.WriteLine(contact);
         }
     }
-
-    // public void ReadFromFile()
-    // {
-    //     using (StreamReader reader = new StreamReader(contactList))
-    //     {
-    //         string rad;
-    //         while ((rad = reader.ReadLine()) != null)
-    //         {
-    //             Console.WriteLine(rad);
-    //         }
-    //     }
-    // }
 
     public List<Contact> ReadFromFile()
     {
