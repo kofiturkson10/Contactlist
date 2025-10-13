@@ -14,15 +14,15 @@ class FileHandler
     {
         List<Contact> allContacts = new List<Contact>();
 
-        if (!File.Exists(contactList)) //Om filen inte finns returneras en tom lista, förhindrar att programmet krashar.
+        if (!File.Exists(contactList)) 
             return allContacts;
 
         foreach (var line in File.ReadLines(contactList))
         {
-            if (string.IsNullOrWhiteSpace(line)) //Förhindra att programmet läser tomma rader.
+            if (string.IsNullOrWhiteSpace(line)) 
                 continue;
 
-            string[] cDetail = line.Split(',');
+            string[] cDetail = line.Split(',', StringSplitOptions.TrimEntries);
             Contact c = new Contact(
                 cDetail[0],
                 cDetail[1],
@@ -42,7 +42,6 @@ class FileHandler
         {
             foreach (Contact c in contacts)
                 writer.WriteLine(
-                // $"{c.Name},{c.StreetAddress},{c.ZipCode},{c.City},{c.PhoneNumber},{c.Email}"
                    c.ToString()
                 );
         }

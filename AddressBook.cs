@@ -62,7 +62,7 @@ public class AddressBook
             Console.WriteLine("--- Uppdatera kontakt ---\n");
             Console.WriteLine("Kontakter i adressboken:\n");
 
-            foreach (var contact in allContacts)
+            foreach (Contact contact in allContacts)
             {
                 string nameOut = (contact.Name ?? string.Empty).Trim();
                 string emailOut = (contact.Email ?? string.Empty).Trim();
@@ -79,35 +79,35 @@ public class AddressBook
                 return;
             }
 
-            foreach (var Contact in allContacts)
+            foreach (Contact contact in allContacts)
             {
-                string cleanedNameFromContactList = (Contact.Email ?? string.Empty).Trim();
+                string cleanedNameFromContactList = (contact.Email ?? string.Empty).Trim();
 
                 if (cleanedNameFromContactList.Equals(inputUser, StringComparison.Ordinal))
                 {
                     Console.WriteLine("\nSkriv in nytt namn eller enter för att behålla samma: ");
                     string? newName = Console.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(newName)) Contact.Name = newName;
+                    if (!string.IsNullOrWhiteSpace(newName)) contact.Name = newName;
 
                     Console.WriteLine("\nSkriv in ny adress eller enter för att behålla samma: ");
                     string? newAddress = Console.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(newAddress)) Contact.StreetAddress = newAddress;
+                    if (!string.IsNullOrWhiteSpace(newAddress)) contact.StreetAddress = newAddress;
 
                     Console.WriteLine("\nSkriv in nytt postnummer eller enter för att behålla samma: ");
                     string? newZip = Console.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(newZip)) Contact.ZipCode = newZip;
+                    if (!string.IsNullOrWhiteSpace(newZip)) contact.ZipCode = newZip;
 
                     Console.WriteLine("\nSkriv in ny city eller enter för att behålla samma: ");
                     string? newCity = Console.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(newCity)) Contact.City = newCity;
+                    if (!string.IsNullOrWhiteSpace(newCity)) contact.City = newCity;
 
                     Console.WriteLine("\nSkriv in nytt telefonnummer eller enter för att behålla samma: ");
                     string? newPhone = Console.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(newPhone)) Contact.PhoneNumber = newPhone;
+                    if (!string.IsNullOrWhiteSpace(newPhone)) contact.PhoneNumber = newPhone;
 
                     Console.WriteLine("\nSkriv in ny email eller enter för att behålla samma: ");
                     string? newEmail = Console.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(newEmail)) Contact.Email = newEmail;
+                    if (!string.IsNullOrWhiteSpace(newEmail)) contact.Email = newEmail;
 
                     Console.WriteLine("\nUppdatering klar! Tryck på valfri tangent för att åretgå till huvudmenyn");
                     Console.ReadKey();
