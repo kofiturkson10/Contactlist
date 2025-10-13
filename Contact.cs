@@ -1,4 +1,4 @@
-class Contact 
+class Contact
 {
     public string Name { get; set; }
     public string StreetAddress { get; set; }
@@ -15,6 +15,7 @@ class Contact
         string phoneNumber,
         string email
     )
+
     {
         Name = name;
         StreetAddress = streetAddress;
@@ -26,6 +27,6 @@ class Contact
 
     public override string ToString()
     {
-        return $"{Name}, {StreetAddress}, {ZipCode}, {City}, {PhoneNumber}, {Email}";
+        return $"{Name}, {StreetAddress}, {ZipCode}, {City}, {PhoneNumber}, {Email}\n";
     }
 }

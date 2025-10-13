@@ -2,17 +2,16 @@
 {
     static void Main()
     {
+        AddressBook addressBook = new AddressBook();
         bool isProgramRunning = true;
+
+        Console.Clear();
+        Console.WriteLine("=== Adressboken ===\n");
 
         while (isProgramRunning)
         {
-            AddressBook addressBook = new AddressBook();
-
-            Console.WriteLine("\n=== Adressboken ===\n");
             Console.WriteLine("--- MENY ---\n");
-            Console.WriteLine(
-                "(1) Lägg till kontakt\n(2) Uppdatera kontakt\n(3) Radera kontakt\n(4) Sök kontakt\n(5) Stäng adressboken"
-            );
+            Console.WriteLine("(1) Lägg till kontakt\n(2) Uppdatera kontakt\n(3) Radera kontakt\n(4) Sök kontakt\n(5) Visa kontaktlistan\n(6) Avsluta adressboken\n");
 
             string? userChoice = Console.ReadLine();
 
@@ -35,12 +34,18 @@
                     break;
 
                 case "5":
+                    addressBook.ViewContactList();
+                    break;
+
+                case "6":
                     Console.Clear();
-                    Console.WriteLine("Programmet avslutat");
                     isProgramRunning = false;
                     break;
+
                 default:
-                    Console.WriteLine("Fel inmatning!");
+                    Console.WriteLine("\nFel inmatning! Tryck på valfri tangent för att återgå till huvudmenyn");
+                    Console.ReadKey();
+                    Console.Clear();
                     break;
             }
         }

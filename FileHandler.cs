@@ -1,12 +1,12 @@
- class FileHandler
+class FileHandler
 {
     string contactList = @"ContactList.txt";
 
-    public void WriteToFile(string contact) 
+    public void WriteToFile(Contact contact)
     {
         using (StreamWriter writer = new StreamWriter(contactList, true))
         {
-            writer.WriteLine(contact);
+            writer.WriteLine(contact.ToString());
         }
     }
 
@@ -42,7 +42,8 @@
         {
             foreach (Contact c in contacts)
                 writer.WriteLine(
-                    $"{c.Name},{c.StreetAddress},{c.ZipCode},{c.City},{c.PhoneNumber},{c.Email}"
+                // $"{c.Name},{c.StreetAddress},{c.ZipCode},{c.City},{c.PhoneNumber},{c.Email}"
+                   c.ToString()
                 );
         }
     }
